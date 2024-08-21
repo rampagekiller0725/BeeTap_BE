@@ -17,8 +17,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const JWT_SECRET = process.env.JWT_SECRET;
-// const baseFrontendUrl = "https://bee-tap-game-app.vercel.app"
-const baseFrontendUrl = "http://localhost:3000"
+const baseFrontendUrl = "https://bee-tap-game-app.vercel.app"
+// const baseFrontendUrl = "http://localhost:3000"
 const baseBackendUrl = "https://tap-squad-back.vercel.app"
 
 // Middleware
