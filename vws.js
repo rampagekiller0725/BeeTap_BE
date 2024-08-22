@@ -95,7 +95,6 @@ app.get("/items/:id", async (req, res) => {
 
 app.post("/items", async (req, res) => {
   const { user } = req.body;
-  console.log(user);
   let item = await Item.findOne({ t_id: user });
 
   if (!item) {
@@ -510,7 +509,6 @@ app.post('/item-purchase', authorizeBearerToken, async (req, res) => {
 app.post('/item-details', authorizeBearerToken, async (req, res) => {
   try {
     const { userId } = req.body;
-    console.log(userId)
     const user = (await User.find({ t_id: userId }))[0];
 
     if (!user) {
@@ -521,7 +519,6 @@ app.post('/item-details', authorizeBearerToken, async (req, res) => {
 
     const items = user.items;
 
-    console.log(user);
     let data = [];
     let totalProfitPerHour = 0;
 
@@ -853,7 +850,6 @@ app.post('/updated-user-data', authorizeBearerToken, async (req, res) => {
     });
   }
 
-  console.log(user);
   const userLevel = getUserLevel(user.totalEarned);
   const passiveIncomePerHour = await calculatePassiveIncome(user.items);
 
