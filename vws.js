@@ -401,7 +401,7 @@ app.post('/set-social', async (req, res) => {
 app.post('/purchase-mine-card', async (req, res) => {
   try {
     const { t_id, index, purchase_amount } = req.body;
-    if (!t_id || index != undefined) {
+    if (!t_id || index == undefined) {
       return res.status(400).json({
         message: "Invalid id or index",
       });
