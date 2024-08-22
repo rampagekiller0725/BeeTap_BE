@@ -415,7 +415,7 @@ app.post('/purchase-mine-card', async (req, res) => {
     }
 
     console.log("asdfdsafsd");
-    console.log(user, user.invitees, user.mine_levels, index);
+    console.log(user, user.invitees, JSON.stringify(user.mine_levels), index);
     user.mine_levels[index]++;
     user.balance -= purchase_amount;
     await user.save();
