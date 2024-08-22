@@ -17,8 +17,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const JWT_SECRET = process.env.JWT_SECRET;
-const baseFrontendUrl = "https://bee-tap-game-app.vercel.app"
-// const baseFrontendUrl = "http://localhost:3000"
+// const baseFrontendUrl = "https://bee-tap-game-app.vercel.app"
+const baseFrontendUrl = "http://localhost:3000"
 const baseBackendUrl = "https://tap-squad-back.vercel.app"
 
 // Middleware
@@ -400,7 +400,7 @@ app.post('/set-social', async (req, res) => {
 
 app.post('/purchase-mine-card', async (req, res) => {
   try {
-    const { t_id, index, profit_perhour, purchase_amount } = req.body;
+    const { t_id, index, purchase_amount } = req.body;
     if (!t_id || index != undefined) {
       return res.status(400).json({
         message: "Invalid id or index",
