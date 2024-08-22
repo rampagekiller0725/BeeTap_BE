@@ -45,6 +45,7 @@ const userSchema = new Schema({
   referalLink: { type: String },
   inviter: { type: String },
   invitees: { type: Array, default: [] },
+  mine_levels: {type: Array, default: []},
   isPremium: { type: Boolean, default: false },
   last_login_timestamp: { type: String },
   last_daily_reward: { type: Number },
