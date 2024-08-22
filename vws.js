@@ -409,7 +409,6 @@ app.post('/purchase-mine-card', async (req, res) => {
 
     const user = await User.findOne({ t_id: t_id });
 
-    console.log(user, purchase_amount);
     if (!user) {
       return res.status(404).json({
         message: "User not found",
@@ -418,6 +417,7 @@ app.post('/purchase-mine-card', async (req, res) => {
 
     user.mine_levels[index]++;
     user.balance -= purchase_amount;
+    console.log(user, purchase_amount);
     await user.save();
 
     return res.status(200).json({
