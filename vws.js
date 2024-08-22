@@ -850,6 +850,7 @@ app.post('/updated-user-data', authorizeBearerToken, async (req, res) => {
     });
   }
 
+  console.log(user);
   const userLevel = getUserLevel(user.totalEarned);
   const passiveIncomePerHour = await calculatePassiveIncome(user.items);
 
